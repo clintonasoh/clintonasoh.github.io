@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Clinton Asoh-Itambi</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm Clinton Asoh-Itambi</h1>
+            <p class="subtitle">Data Scientist & Machine Learning Engineer | Analytics Enthusiast</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/clintonasoh" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/asoh-itambi" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="profile-picture.jpg" alt="Clinton Asoh-Itambi" class="profile-img">
+                </div>
+                <div class="about-text">
+                    <p>I'm a data scientist and machine learning engineer passionate about leveraging data to solve real-world problems. With expertise in machine learning, deep learning, and business analytics, I transform complex datasets into actionable insights that drive informed decision-making.</p>
+                    <p>My work spans medical imaging analysis, predictive modeling, environmental data science, and business intelligence. I'm committed to continuous learning, exploring cutting-edge ML techniques, and collaborating with teams to deliver impactful solutions across diverse domains.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>5+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat">
+                        <h3>20+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat">
+                        <h3>15+</h3>
+                        <p>Happy Clients</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="projects/stroke-detection.jpg" alt="Stroke Detection in Brain CT Scans">
+                    </div>
+                    <div class="project-content">
+                        <h3>Stroke Detection in Brain CT Scans</h3>
+                        <p>Deep learning model using transfer learning (VGG16) to detect stroke presence in brain CT scans. Achieved 91.91% test accuracy on balanced medical imaging dataset with comprehensive evaluation and clinical validation considerations.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">Medical Imaging</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/clintonasoh/Stroke-detection-in-Brain-CT-scans" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="projects/recipe-traffic.jpg" alt="Recipe Website Traffic Prediction">
+                    </div>
+                    <div class="project-content">
+                        <h3>Recipe Website Traffic Prediction</h3>
+                        <p>Binary classification model using Logistic Regression to predict high-traffic recipes for website optimization. Achieved 100% recall, identifying key features that influence recipe popularity and driving user engagement.</p>
+                        <div class="project-tags">
+                            <span class="tag">Logistic Regression</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/clintonasoh/Recipe-Website-Traffic-Prediction" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="projects/cyclistic.jpg" alt="Cyclistic Bike-Share Analysis">
+                    </div>
+                    <div class="project-content">
+                        <h3>Cyclistic Bike-Share Analysis</h3>
+                        <p>Comprehensive data analysis identifying trends in bike-share usage patterns. Analyzed 12-month trip data to develop marketing strategies for converting casual riders into annual members with actionable recommendations.</p>
+                        <div class="project-tags">
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Business Analytics</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/clintonasoh/Cyclistic-Bike-Share-Analysis" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="projects/climate-change.jpg" alt="Climate Change and Impacts in Africa">
+                    </div>
+                    <div class="project-content">
+                        <h3>Climate Change and Impacts in Africa</h3>
+                        <p>Data analysis project examining CO2 emissions and temperature relationships across African regions. Analyzed historical climate data from 1970-2021, created predictive models, and assessed industry-specific emission impacts.</p>
+                        <div class="project-tags">
+                            <span class="tag">Data Science</span>
+                            <span class="tag">Environmental Analysis</span>
+                            <span class="tag">Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/clintonasoh/Climate-Change-and-Impacts-in-Africa" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="projects/cifar10.jpg" alt="CIFAR-10 Image Classifier">
+                    </div>
+                    <div class="project-content">
+                        <h3>CIFAR-10 Image Classifier</h3>
+                        <p>Neural network implementation for image classification on the CIFAR-10 benchmark dataset. Built custom CNN architecture achieving 47.32% accuracy with experimentation in model optimization and architectural improvements.</p>
+                        <div class="project-tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Neural Networks</span>
+                            <span class="tag">Computer Vision</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/clintonasoh/CIFAR-10-Image-Classifier" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="projects/sales-strategy.jpg" alt="Optimizing Sales Strategy for New Product Line">
+                    </div>
+                    <div class="project-content">
+                        <h3>Optimizing Sales Strategy for New Product Line</h3>
+                        <p>Data analytics project analyzing sales methods and revenue optimization. Evaluated customer distribution and temporal trends to recommend the most effective sales approach, identifying "Email + Call" as the best strategy.</p>
+                        <div class="project-tags">
+                            <span class="tag">Business Analytics</span>
+                            <span class="tag">Data Visualization</span>
+                            <span class="tag">Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/clintonasoh/Optimizing-Sales-Strategy-for-New-Product-Line" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Data Science</h3>
+                    <ul>
+                        <li>Machine Learning</li>
+                        <li>Statistical Analysis</li>
+                        <li>Predictive Modeling</li>
+                        <li>Feature Engineering</li>
+                        <li>Model Evaluation</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Jupyter Notebooks</li>
+                        <li>SQL</li>
+                        <li>Data Wrangling</li>
+                        <li>Git & GitHub</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Deep Learning & AI</h3>
+                    <ul>
+                        <li>TensorFlow & Keras</li>
+                        <li>PyTorch</li>
+                        <li>Transfer Learning</li>
+                        <li>Neural Networks</li>
+                        <li>Computer Vision</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Analytics & Tools</h3>
+                    <ul>
+                        <li>Data Visualization</li>
+                        <li>Pandas & NumPy</li>
+                        <li>Scikit-learn</li>
+                        <li>Business Intelligence</li>
+                        <li>Cloud Platforms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-subtitle">I'd love to hear from you. Feel free to reach out!</p>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Clinton Asoh-Itambi. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
