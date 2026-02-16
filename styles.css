@@ -475,6 +475,7 @@ section {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
+    display: block;
 }
 
 .timeline::before {
@@ -486,26 +487,30 @@ section {
     height: 100%;
     background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
     border-radius: 2px;
+    display: block;
 }
 
 .timeline-item {
     margin-bottom: 2.5rem;
     position: relative;
     padding-left: 100px;
+    display: block;
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
     width: 100%;
     text-align: left;
-    padding: 0;
+    padding: 1.5rem;
     margin: 0;
+    display: block;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
     width: 100%;
     text-align: left;
-    padding: 0;
+    padding: 1.5rem;
     margin: 0;
+    display: block;
 }
 
 .timeline-item::before {
@@ -519,6 +524,7 @@ section {
     border-radius: 50%;
     top: 5px;
     z-index: 10;
+    display: block;
 }
 
 .timeline-content {
@@ -527,6 +533,7 @@ section {
     border-radius: 10px;
     transition: var(--transition);
     border-left: 4px solid var(--primary-color);
+    display: block;
 }
 
 .timeline-content:hover {
@@ -538,6 +545,7 @@ section {
     font-size: 1.3rem;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
+    display: block;
 }
 
 .timeline-content .company {
