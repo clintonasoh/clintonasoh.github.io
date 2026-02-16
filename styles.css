@@ -270,6 +270,18 @@ section {
     line-height: 1.8;
 }
 
+.profile-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.profile-link:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
 .about-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -456,6 +468,24 @@ section {
     font-size: 1.2rem;
     color: var(--text-light);
     margin-bottom: 2rem;
+}
+
+.contact-email {
+    margin-top: 1.5rem;
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.contact-email a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.contact-email a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
 }
 
 .contact-form {
