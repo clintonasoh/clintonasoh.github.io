@@ -59,11 +59,11 @@ body {
 }
 
 .nav-logo {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     object-fit: contain;
     vertical-align: middle;
-    margin-right: 10px;
+    margin-right: 12px;
     border-radius: 6px;
 }
 
