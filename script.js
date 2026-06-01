@@ -212,17 +212,19 @@ if (contactForm) {
         formSuccess.classList.remove('show');
         formError.classList.remove('show');
 
-        const data = Object.fromEntries(new FormData(contactForm));
+        const name    = document.getElementById('name').value.trim();
+        const email   = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        const data    = { name, email, message };
 
         try {
-            const res  = await fetch('https://api.web3forms.com/submit', {
+            const res  = await fetch('https://formspree.io/f/xwvzdadz', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                 body: JSON.stringify(data)
             });
-            const json = await res.json();
 
-            if (json.success) {
+            if (res.ok) {
                 formSuccess.classList.add('show');
                 contactForm.reset();
                 setTimeout(() => formSuccess.classList.remove('show'), 6000);
