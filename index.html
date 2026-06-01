@@ -73,11 +73,11 @@
 
             <nav class="sidebar-nav" id="sidebarNav">
                 <a href="#about"          class="snav-item" data-section="about"><span class="snav-dot"></span><span class="snav-label">About</span></a>
-                <a href="#experience"     class="snav-item" data-section="experience"><span class="snav-dot"></span><span class="snav-label">Experience</span></a>
-                <a href="#education"      class="snav-item" data-section="education"><span class="snav-dot"></span><span class="snav-label">Education</span></a>
-                <a href="#publications"   class="snav-item" data-section="publications"><span class="snav-dot"></span><span class="snav-label">Publications</span></a>
                 <a href="#projects"       class="snav-item" data-section="projects"><span class="snav-dot"></span><span class="snav-label">Projects</span></a>
                 <a href="#skills"         class="snav-item" data-section="skills"><span class="snav-dot"></span><span class="snav-label">Skills</span></a>
+                <a href="#experience"     class="snav-item" data-section="experience"><span class="snav-dot"></span><span class="snav-label">Experience</span></a>
+                <a href="#publications"   class="snav-item" data-section="publications"><span class="snav-dot"></span><span class="snav-label">Publications</span></a>
+                <a href="#education"      class="snav-item" data-section="education"><span class="snav-dot"></span><span class="snav-label">Education</span></a>
                 <a href="#certifications" class="snav-item" data-section="certifications"><span class="snav-dot"></span><span class="snav-label">Certifications</span></a>
                 <a href="#contact"        class="snav-item" data-section="contact"><span class="snav-dot"></span><span class="snav-label">Contact</span></a>
             </nav>
@@ -101,6 +101,156 @@
                 <div class="about-body reveal">
                     <p>I am a results-driven AI/ML Engineer and Data Scientist bridging the gap between deep academic research and scalable industry solutions. I hold a Master's degree in Computer Engineering from Yıldız Technical University, where I am currently pursuing my PhD alongside professional certifications in Data Science and Analytics.</p>
                     <p>With over eight years of experience, I specialize in transforming complex data into measurable impact. My work spans designing deep learning pipelines for medical cancer detection, engineering environmental data solutions, and fine-tuning large language models for agentic AI systems. I am deeply passionate about collaborative innovation and leveraging cutting-edge technology to drive both business value and societal progress.</p>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section id="projects" class="section section--alt">
+                <div class="section-header reveal">
+                    <span class="section-label">What I've built</span>
+                    <h2 class="section-title">Projects</h2>
+                </div>
+                <div class="filter-tabs reveal">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="deep-learning">Deep Learning</button>
+                    <button class="filter-btn" data-filter="data-science">Data Science</button>
+                    <button class="filter-btn" data-filter="research">Research</button>
+                </div>
+                <div class="projects-grid">
+
+                    <div class="project-card reveal" data-category="research">
+                        <div class="project-image project-image--gradient">
+                            <div class="gradient-vis">
+                                <div class="vis-node" style="top:20%;left:15%"></div>
+                                <div class="vis-node" style="top:60%;left:30%"></div>
+                                <div class="vis-node" style="top:30%;left:55%"></div>
+                                <div class="vis-node" style="top:70%;left:70%"></div>
+                                <div class="vis-node" style="top:15%;left:80%"></div>
+                                <div class="vis-line"></div>
+                            </div>
+                            <div class="project-overlay">
+                                <p>Replaces classical n-gram statistics with GPT-2 and PixelCNN as probability models inside a 32-bit arithmetic coder. GPT-2-XL achieves 9.15× compression, surpassing PAQ8.</p>
+                            </div>
+                            <span class="project-badge">Research</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Neural Probability Models as Arithmetic Coding Engines</h3>
+                            <div class="project-tags">
+                                <span class="tag">PyTorch</span><span class="tag">GPT-2</span><span class="tag">PixelCNN</span><span class="tag">Arithmetic Coding</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/clintonasoh/Neural-Probability-Models-as-Arithmetic-Coding-Engines" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal" data-category="deep-learning">
+                        <div class="project-image">
+                            <img src="projects/stroke-detection.jpg" alt="Stroke Detection" loading="lazy">
+                            <div class="project-overlay"><p>Deep learning model using VGG16 to detect stroke in brain CT scans. 91.91% test accuracy on a balanced medical imaging dataset.</p></div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Stroke Detection in Brain CT Scans</h3>
+                            <div class="project-tags"><span class="tag">Python</span><span class="tag">Deep Learning</span><span class="tag">Medical Imaging</span></div>
+                            <div class="project-links"><a href="https://github.com/clintonasoh/Stroke-detection-in-Brain-CT-scans" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></div>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal" data-category="data-science">
+                        <div class="project-image">
+                            <img src="projects/recipe-traffic.jpg" alt="Recipe Traffic" loading="lazy">
+                            <div class="project-overlay"><p>Logistic Regression classifier to predict high-traffic recipes. Achieved 100% recall, identifying key features that drive user engagement.</p></div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Recipe Website Traffic Prediction</h3>
+                            <div class="project-tags"><span class="tag">Logistic Regression</span><span class="tag">Machine Learning</span><span class="tag">Python</span></div>
+                            <div class="project-links"><a href="https://github.com/clintonasoh/Recipe-Website-Traffic-Prediction" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></div>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal" data-category="data-science">
+                        <div class="project-image">
+                            <img src="projects/cyclistic.jpg" alt="Cyclistic" loading="lazy">
+                            <div class="project-overlay"><p>Analyzed 12-month bike-share trip data to develop strategies for converting casual riders into annual members.</p></div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Cyclistic Bike-Share Analysis</h3>
+                            <div class="project-tags"><span class="tag">Data Analysis</span><span class="tag">Python</span><span class="tag">Business Analytics</span></div>
+                            <div class="project-links"><a href="https://github.com/clintonasoh/Cyclistic-Bike-Share-Analysis" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></div>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal" data-category="data-science">
+                        <div class="project-image">
+                            <img src="projects/climate-change.jpg" alt="Climate Change" loading="lazy">
+                            <div class="project-overlay"><p>Analyzed CO₂ emissions and temperature across African regions from 1970–2021. Built predictive models and assessed industry-specific impacts.</p></div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Climate Change and Impacts in Africa</h3>
+                            <div class="project-tags"><span class="tag">Data Science</span><span class="tag">Environmental Analysis</span><span class="tag">Python</span></div>
+                            <div class="project-links"><a href="https://github.com/clintonasoh/Climate-Change-and-Impacts-in-Africa" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></div>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal" data-category="deep-learning">
+                        <div class="project-image">
+                            <img src="projects/cifar10.jpg" alt="CIFAR-10" loading="lazy">
+                            <div class="project-overlay"><p>Custom CNN architecture for CIFAR-10 image classification built with PyTorch, with experimentation in model optimization.</p></div>
+                        </div>
+                        <div class="project-content">
+                            <h3>CIFAR-10 Image Classifier</h3>
+                            <div class="project-tags"><span class="tag">PyTorch</span><span class="tag">Neural Networks</span><span class="tag">Computer Vision</span></div>
+                            <div class="project-links"><a href="https://github.com/clintonasoh/CIFAR-10-Image-Classifier" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></div>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal" data-category="data-science">
+                        <div class="project-image">
+                            <img src="projects/sales-strategy.jpg" alt="Sales Strategy" loading="lazy">
+                            <div class="project-overlay"><p>Identified "Email + Call" as the best sales strategy through analysis of customer distribution and temporal revenue trends.</p></div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Optimizing Sales Strategy for New Product Line</h3>
+                            <div class="project-tags"><span class="tag">Business Analytics</span><span class="tag">Data Visualization</span><span class="tag">Python</span></div>
+                            <div class="project-links"><a href="https://github.com/clintonasoh/Optimizing-Sales-Strategy-for-New-Product-Line" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section id="skills" class="section">
+                <div class="section-header reveal">
+                    <span class="section-label">What I use</span>
+                    <h2 class="section-title">Skills</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-group reveal">
+                        <div class="skill-group-icon"><i class="fas fa-brain"></i></div>
+                        <h3>Data Science</h3>
+                        <div class="skill-tags"><span>Machine Learning</span><span>Statistical Analysis</span><span>Predictive Modeling</span><span>Feature Engineering</span><span>Model Evaluation</span></div>
+                    </div>
+                    <div class="skill-group reveal">
+                        <div class="skill-group-icon"><i class="fas fa-code"></i></div>
+                        <h3>Programming</h3>
+                        <div class="skill-tags"><span>Python</span><span>R</span><span>SQL</span><span>Jupyter</span><span>Git & GitHub</span><span>Data Wrangling</span></div>
+                    </div>
+                    <div class="skill-group reveal">
+                        <div class="skill-group-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3>Deep Learning & AI</h3>
+                        <div class="skill-tags"><span>PyTorch</span><span>TensorFlow</span><span>Keras</span><span>Transfer Learning</span><span>Computer Vision</span><span>Neural Networks</span></div>
+                    </div>
+                    <div class="skill-group reveal">
+                        <div class="skill-group-icon"><i class="fas fa-robot"></i></div>
+                        <h3>Agentic AI</h3>
+                        <div class="skill-tags"><span>LangChain</span><span>LangGraph</span><span>Function Calling</span><span>SFT</span><span>RLHF</span><span>Agent Architecture</span></div>
+                    </div>
+                    <div class="skill-group reveal">
+                        <div class="skill-group-icon"><i class="fas fa-chart-bar"></i></div>
+                        <h3>Analytics & Tools</h3>
+                        <div class="skill-tags"><span>Pandas & NumPy</span><span>Scikit-learn</span><span>Data Visualization</span><span>Business Intelligence</span><span>Cloud Platforms</span></div>
+                    </div>
                 </div>
             </section>
 
@@ -236,43 +386,8 @@
                 </div>
             </section>
 
-            <!-- Education -->
-            <section id="education" class="section">
-                <div class="section-header reveal">
-                    <span class="section-label">Academic background</span>
-                    <h2 class="section-title">Education</h2>
-                </div>
-                <div class="education-grid">
-                    <div class="education-card reveal">
-                        <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <span class="degree-badge">PhD</span>
-                        <h3>Computer Engineering</h3>
-                        <p class="edu-school">Yıldız Technical University</p>
-                        <p class="edu-location"><i class="fas fa-map-marker-alt"></i> Istanbul, Türkiye</p>
-                        <p class="edu-date">Sep 2025 – Aug 2029</p>
-                    </div>
-                    <div class="education-card reveal">
-                        <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <span class="degree-badge">MSc</span>
-                        <h3>Computer Engineering</h3>
-                        <p class="edu-school">Yıldız Technical University</p>
-                        <p class="edu-location"><i class="fas fa-map-marker-alt"></i> Istanbul, Türkiye</p>
-                        <p class="edu-date">Oct 2022 – Jun 2025</p>
-                    </div>
-                    <div class="education-card reveal">
-                        <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <span class="degree-badge">BEng</span>
-                        <h3>Computer Engineering</h3>
-                        <p class="edu-detail">Telecommunications Engineering Specialization</p>
-                        <p class="edu-school">University of Buea</p>
-                        <p class="edu-location"><i class="fas fa-map-marker-alt"></i> Buea, Cameroon</p>
-                        <p class="edu-date">Oct 2012 – Aug 2016</p>
-                    </div>
-                </div>
-            </section>
-
             <!-- Publications -->
-            <section id="publications" class="section section--alt">
+            <section id="publications" class="section">
                 <div class="section-header reveal">
                     <span class="section-label">Academic work</span>
                     <h2 class="section-title">Publications</h2>
@@ -305,152 +420,37 @@
                 </div>
             </section>
 
-            <!-- Projects -->
-            <section id="projects" class="section">
+            <!-- Education -->
+            <section id="education" class="section section--alt">
                 <div class="section-header reveal">
-                    <span class="section-label">What I've built</span>
-                    <h2 class="section-title">Projects</h2>
+                    <span class="section-label">Academic background</span>
+                    <h2 class="section-title">Education</h2>
                 </div>
-                <div class="filter-tabs reveal">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="deep-learning">Deep Learning</button>
-                    <button class="filter-btn" data-filter="data-science">Data Science</button>
-                    <button class="filter-btn" data-filter="research">Research</button>
-                </div>
-                <div class="projects-grid">
-
-                    <div class="project-card reveal" data-category="research">
-                        <div class="project-image project-image--gradient">
-                            <div class="gradient-vis">
-                                <div class="vis-node" style="top:20%;left:15%"></div>
-                                <div class="vis-node" style="top:60%;left:30%"></div>
-                                <div class="vis-node" style="top:30%;left:55%"></div>
-                                <div class="vis-node" style="top:70%;left:70%"></div>
-                                <div class="vis-node" style="top:15%;left:80%"></div>
-                                <div class="vis-line"></div>
-                            </div>
-                            <div class="project-overlay">
-                                <p>Replaces classical n-gram statistics with GPT-2 and PixelCNN as probability models inside a 32-bit arithmetic coder. GPT-2-XL achieves 9.15× compression, surpassing PAQ8.</p>
-                            </div>
-                            <span class="project-badge">Research</span>
-                        </div>
-                        <div class="project-content">
-                            <h3>Neural Probability Models as Arithmetic Coding Engines</h3>
-                            <div class="project-tags">
-                                <span class="tag">PyTorch</span><span class="tag">GPT-2</span><span class="tag">PixelCNN</span><span class="tag">Arithmetic Coding</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/clintonasoh/Neural-Probability-Models-as-Arithmetic-Coding-Engines" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-                            </div>
-                        </div>
+                <div class="education-grid">
+                    <div class="education-card reveal">
+                        <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <span class="degree-badge">PhD</span>
+                        <h3>Computer Engineering</h3>
+                        <p class="edu-school">Yıldız Technical University</p>
+                        <p class="edu-location"><i class="fas fa-map-marker-alt"></i> Istanbul, Türkiye</p>
+                        <p class="edu-date">Sep 2025 – Aug 2029</p>
                     </div>
-
-                    <div class="project-card reveal" data-category="deep-learning">
-                        <div class="project-image">
-                            <img src="projects/stroke-detection.jpg" alt="Stroke Detection" loading="lazy">
-                            <div class="project-overlay"><p>Deep learning model using VGG16 to detect stroke in brain CT scans. 91.91% test accuracy on a balanced medical imaging dataset.</p></div>
-                        </div>
-                        <div class="project-content">
-                            <h3>Stroke Detection in Brain CT Scans</h3>
-                            <div class="project-tags"><span class="tag">Python</span><span class="tag">Deep Learning</span><span class="tag">Medical Imaging</span></div>
-                            <div class="project-links"><a href="https://github.com/clintonasoh/Stroke-detection-in-Brain-CT-scans" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></div>
-                        </div>
+                    <div class="education-card reveal">
+                        <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <span class="degree-badge">MSc</span>
+                        <h3>Computer Engineering</h3>
+                        <p class="edu-school">Yıldız Technical University</p>
+                        <p class="edu-location"><i class="fas fa-map-marker-alt"></i> Istanbul, Türkiye</p>
+                        <p class="edu-date">Oct 2022 – Jun 2025</p>
                     </div>
-
-                    <div class="project-card reveal" data-category="data-science">
-                        <div class="project-image">
-                            <img src="projects/recipe-traffic.jpg" alt="Recipe Traffic" loading="lazy">
-                            <div class="project-overlay"><p>Logistic Regression classifier to predict high-traffic recipes. Achieved 100% recall, identifying key features that drive user engagement.</p></div>
-                        </div>
-                        <div class="project-content">
-                            <h3>Recipe Website Traffic Prediction</h3>
-                            <div class="project-tags"><span class="tag">Logistic Regression</span><span class="tag">Machine Learning</span><span class="tag">Python</span></div>
-                            <div class="project-links"><a href="https://github.com/clintonasoh/Recipe-Website-Traffic-Prediction" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></div>
-                        </div>
-                    </div>
-
-                    <div class="project-card reveal" data-category="data-science">
-                        <div class="project-image">
-                            <img src="projects/cyclistic.jpg" alt="Cyclistic" loading="lazy">
-                            <div class="project-overlay"><p>Analyzed 12-month bike-share trip data to develop strategies for converting casual riders into annual members.</p></div>
-                        </div>
-                        <div class="project-content">
-                            <h3>Cyclistic Bike-Share Analysis</h3>
-                            <div class="project-tags"><span class="tag">Data Analysis</span><span class="tag">Python</span><span class="tag">Business Analytics</span></div>
-                            <div class="project-links"><a href="https://github.com/clintonasoh/Cyclistic-Bike-Share-Analysis" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></div>
-                        </div>
-                    </div>
-
-                    <div class="project-card reveal" data-category="data-science">
-                        <div class="project-image">
-                            <img src="projects/climate-change.jpg" alt="Climate Change" loading="lazy">
-                            <div class="project-overlay"><p>Analyzed CO₂ emissions and temperature across African regions from 1970–2021. Built predictive models and assessed industry-specific impacts.</p></div>
-                        </div>
-                        <div class="project-content">
-                            <h3>Climate Change and Impacts in Africa</h3>
-                            <div class="project-tags"><span class="tag">Data Science</span><span class="tag">Environmental Analysis</span><span class="tag">Python</span></div>
-                            <div class="project-links"><a href="https://github.com/clintonasoh/Climate-Change-and-Impacts-in-Africa" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></div>
-                        </div>
-                    </div>
-
-                    <div class="project-card reveal" data-category="deep-learning">
-                        <div class="project-image">
-                            <img src="projects/cifar10.jpg" alt="CIFAR-10" loading="lazy">
-                            <div class="project-overlay"><p>Custom CNN architecture for CIFAR-10 image classification built with PyTorch, with experimentation in model optimization.</p></div>
-                        </div>
-                        <div class="project-content">
-                            <h3>CIFAR-10 Image Classifier</h3>
-                            <div class="project-tags"><span class="tag">PyTorch</span><span class="tag">Neural Networks</span><span class="tag">Computer Vision</span></div>
-                            <div class="project-links"><a href="https://github.com/clintonasoh/CIFAR-10-Image-Classifier" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></div>
-                        </div>
-                    </div>
-
-                    <div class="project-card reveal" data-category="data-science">
-                        <div class="project-image">
-                            <img src="projects/sales-strategy.jpg" alt="Sales Strategy" loading="lazy">
-                            <div class="project-overlay"><p>Identified "Email + Call" as the best sales strategy through analysis of customer distribution and temporal revenue trends.</p></div>
-                        </div>
-                        <div class="project-content">
-                            <h3>Optimizing Sales Strategy for New Product Line</h3>
-                            <div class="project-tags"><span class="tag">Business Analytics</span><span class="tag">Data Visualization</span><span class="tag">Python</span></div>
-                            <div class="project-links"><a href="https://github.com/clintonasoh/Optimizing-Sales-Strategy-for-New-Product-Line" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- Skills -->
-            <section id="skills" class="section section--alt">
-                <div class="section-header reveal">
-                    <span class="section-label">What I use</span>
-                    <h2 class="section-title">Skills</h2>
-                </div>
-                <div class="skills-grid">
-                    <div class="skill-group reveal">
-                        <div class="skill-group-icon"><i class="fas fa-brain"></i></div>
-                        <h3>Data Science</h3>
-                        <div class="skill-tags"><span>Machine Learning</span><span>Statistical Analysis</span><span>Predictive Modeling</span><span>Feature Engineering</span><span>Model Evaluation</span></div>
-                    </div>
-                    <div class="skill-group reveal">
-                        <div class="skill-group-icon"><i class="fas fa-code"></i></div>
-                        <h3>Programming</h3>
-                        <div class="skill-tags"><span>Python</span><span>R</span><span>SQL</span><span>Jupyter</span><span>Git & GitHub</span><span>Data Wrangling</span></div>
-                    </div>
-                    <div class="skill-group reveal">
-                        <div class="skill-group-icon"><i class="fas fa-network-wired"></i></div>
-                        <h3>Deep Learning & AI</h3>
-                        <div class="skill-tags"><span>PyTorch</span><span>TensorFlow</span><span>Keras</span><span>Transfer Learning</span><span>Computer Vision</span><span>Neural Networks</span></div>
-                    </div>
-                    <div class="skill-group reveal">
-                        <div class="skill-group-icon"><i class="fas fa-robot"></i></div>
-                        <h3>Agentic AI</h3>
-                        <div class="skill-tags"><span>LangChain</span><span>LangGraph</span><span>Function Calling</span><span>SFT</span><span>RLHF</span><span>Agent Architecture</span></div>
-                    </div>
-                    <div class="skill-group reveal">
-                        <div class="skill-group-icon"><i class="fas fa-chart-bar"></i></div>
-                        <h3>Analytics & Tools</h3>
-                        <div class="skill-tags"><span>Pandas & NumPy</span><span>Scikit-learn</span><span>Data Visualization</span><span>Business Intelligence</span><span>Cloud Platforms</span></div>
+                    <div class="education-card reveal">
+                        <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <span class="degree-badge">BEng</span>
+                        <h3>Computer Engineering</h3>
+                        <p class="edu-detail">Telecommunications Engineering Specialization</p>
+                        <p class="edu-school">University of Buea</p>
+                        <p class="edu-location"><i class="fas fa-map-marker-alt"></i> Buea, Cameroon</p>
+                        <p class="edu-date">Oct 2012 – Aug 2016</p>
                     </div>
                 </div>
             </section>
@@ -505,6 +505,8 @@
                         <div class="form-success" id="formSuccess"><i class="fas fa-check-circle"></i> Message sent! I'll get back to you soon.</div>
                     </form>
                 </div>
+            </section>
+
             </section>
 
             <footer class="footer">
