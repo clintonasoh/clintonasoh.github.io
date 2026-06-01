@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#080f1a"/>
+      <stop offset="100%" style="stop-color:#0c1a30"/>
+    </linearGradient>
+    <linearGradient id="azure" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0078d4"/>
+      <stop offset="100%" style="stop-color:#50e6ff"/>
+    </linearGradient>
+    <linearGradient id="cyan2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0891b2"/>
+      <stop offset="100%" style="stop-color:#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0891b2"/>
+      <stop offset="100%" style="stop-color:#0e7490"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0078d4"/>
+      <stop offset="100%" style="stop-color:#005a9e"/>
+    </linearGradient>
+    <linearGradient id="bar3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#047857"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="420" fill="url(#bg2)"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.04" stroke="#50e6ff" stroke-width="1">
+    <line x1="0" y1="70" x2="800" y2="70"/>
+    <line x1="0" y1="140" x2="800" y2="140"/>
+    <line x1="0" y1="210" x2="800" y2="210"/>
+    <line x1="0" y1="280" x2="800" y2="280"/>
+    <line x1="0" y1="350" x2="800" y2="350"/>
+    <line x1="100" y1="0" x2="100" y2="420"/>
+    <line x1="200" y1="0" x2="200" y2="420"/>
+    <line x1="300" y1="0" x2="300" y2="420"/>
+    <line x1="400" y1="0" x2="400" y2="420"/>
+    <line x1="500" y1="0" x2="500" y2="420"/>
+    <line x1="600" y1="0" x2="600" y2="420"/>
+    <line x1="700" y1="0" x2="700" y2="420"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="38" font-family="Inter, sans-serif" font-size="17" font-weight="700" fill="#e2f4ff" text-anchor="middle" letter-spacing="0.5">OPTIMIZING AN ML PIPELINE IN AZURE</text>
+  <line x1="140" y1="50" x2="660" y2="50" stroke="url(#azure)" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Azure logo area -->
+  <rect x="30" y="65" width="110" height="110" rx="12" fill="#0d1829" stroke="#0078d4" stroke-width="1.5"/>
+  <text x="85" y="108" font-family="Inter, sans-serif" font-size="28" font-weight="900" fill="#0078d4" text-anchor="middle">⊞</text>
+  <text x="85" y="130" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#50e6ff" text-anchor="middle">Azure ML</text>
+  <text x="85" y="148" font-family="Inter, sans-serif" font-size="8.5" fill="#5a8aaa" text-anchor="middle">Studio</text>
+
+  <!-- Dataset box -->
+  <rect x="30" y="195" width="110" height="60" rx="8" fill="#0d1829" stroke="#0891b2" stroke-width="1"/>
+  <text x="85" y="218" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#22d3ee" text-anchor="middle">Dataset</text>
+  <text x="85" y="233" font-family="Inter, sans-serif" font-size="8" fill="#5a8aaa" text-anchor="middle">Bank Marketing</text>
+  <text x="85" y="246" font-family="Inter, sans-serif" font-size="8" fill="#5a8aaa" text-anchor="middle">32,951 rows · 20 feat.</text>
+
+  <!-- Arrow from dataset up -->
+  <line x1="85" y1="195" x2="85" y2="178" stroke="#0891b2" stroke-width="1.5" opacity="0.7" stroke-dasharray="4,2"/>
+
+  <!-- Two paths label -->
+  <text x="400" y="80" font-family="Inter, sans-serif" font-size="11" fill="#5a8aaa" text-anchor="middle">Two Optimization Approaches</text>
+
+  <!-- PATH 1: HyperDrive -->
+  <rect x="170" y="65" width="265" height="240" rx="12" fill="#0d1829" stroke="#0891b2" stroke-width="1.5"/>
+  <rect x="170" y="65" width="265" height="4" rx="2" fill="url(#cyan2)"/>
+  <text x="302" y="92" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#22d3ee" text-anchor="middle" letter-spacing="0.5">HYPERDRIVE</text>
+  <text x="302" y="108" font-family="Inter, sans-serif" font-size="8.5" fill="#5a8aaa" text-anchor="middle">Hyperparameter Tuning</text>
+
+  <!-- HyperDrive steps -->
+  <rect x="186" y="120" width="233" height="28" rx="5" fill="#111e30" stroke="#0891b2" stroke-width="0.8"/>
+  <text x="302" y="138" font-family="Inter, sans-serif" font-size="8.5" fill="#94d8e8" text-anchor="middle">RandomParameterSampling</text>
+
+  <rect x="186" y="155" width="233" height="28" rx="5" fill="#111e30" stroke="#0891b2" stroke-width="0.8"/>
+  <text x="302" y="173" font-family="Inter, sans-serif" font-size="8.5" fill="#94d8e8" text-anchor="middle">BanditPolicy (early stopping)</text>
+
+  <rect x="186" y="190" width="233" height="28" rx="5" fill="#111e30" stroke="#0891b2" stroke-width="0.8"/>
+  <text x="302" y="208" font-family="Inter, sans-serif" font-size="8.5" fill="#94d8e8" text-anchor="middle">Logistic Regression (custom)</text>
+
+  <!-- HyperDrive result -->
+  <rect x="186" y="232" width="233" height="56" rx="8" fill="#0a1e30" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="302" y="254" font-family="Inter, sans-serif" font-size="9" fill="#5a8aaa" text-anchor="middle">Best Accuracy</text>
+  <text x="302" y="278" font-family="Inter, sans-serif" font-size="26" font-weight="800" fill="#22d3ee" text-anchor="middle">90.96%</text>
+
+  <!-- VS divider -->
+  <circle cx="447" cy="185" r="22" fill="#0a1520" stroke="#1a3050" stroke-width="2"/>
+  <text x="447" y="191" font-family="Inter, sans-serif" font-size="13" font-weight="900" fill="#5a8aaa" text-anchor="middle">VS</text>
+
+  <!-- PATH 2: AutoML -->
+  <rect x="465" y="65" width="265" height="240" rx="12" fill="#0d1829" stroke="#0078d4" stroke-width="1.5"/>
+  <rect x="465" y="65" width="265" height="4" rx="2" fill="url(#azure)"/>
+  <text x="597" y="92" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#50e6ff" text-anchor="middle" letter-spacing="0.5">AUTO ML</text>
+  <text x="597" y="108" font-family="Inter, sans-serif" font-size="8.5" fill="#5a8aaa" text-anchor="middle">Automated Model Selection</text>
+
+  <!-- AutoML steps -->
+  <rect x="481" y="120" width="233" height="28" rx="5" fill="#111e30" stroke="#0078d4" stroke-width="0.8"/>
+  <text x="597" y="138" font-family="Inter, sans-serif" font-size="8.5" fill="#7dd3fc" text-anchor="middle">Feature Engineering</text>
+
+  <rect x="481" y="155" width="233" height="28" rx="5" fill="#111e30" stroke="#0078d4" stroke-width="0.8"/>
+  <text x="597" y="173" font-family="Inter, sans-serif" font-size="8.5" fill="#7dd3fc" text-anchor="middle">Algorithm Selection</text>
+
+  <rect x="481" y="190" width="233" height="28" rx="5" fill="#111e30" stroke="#0078d4" stroke-width="0.8"/>
+  <text x="597" y="208" font-family="Inter, sans-serif" font-size="8.5" fill="#7dd3fc" text-anchor="middle">VotingEnsemble (best)</text>
+
+  <!-- AutoML result — winner -->
+  <rect x="481" y="232" width="233" height="56" rx="8" fill="#0a1e18" stroke="#10b981" stroke-width="2"/>
+  <text x="597" y="248" font-family="Inter, sans-serif" font-size="8" fill="#10b981" text-anchor="middle">★ WINNER</text>
+  <text x="597" y="264" font-family="Inter, sans-serif" font-size="9" fill="#5a8aaa" text-anchor="middle">Best Accuracy</text>
+  <text x="597" y="278" font-family="Inter, sans-serif" font-size="26" font-weight="800" fill="#10b981" text-anchor="middle">91.70%</text>
+
+  <!-- Bottom bar chart -->
+  <rect x="30" y="325" width="740" height="70" rx="8" fill="#0d1829" stroke="#1a3050" stroke-width="1" opacity="0.9"/>
+  <text x="60" y="345" font-family="Inter, sans-serif" font-size="9" fill="#5a8aaa">Accuracy Comparison</text>
+
+  <!-- Bar 1 HyperDrive -->
+  <rect x="120" y="358" width="210" height="16" rx="3" fill="url(#bar1)" opacity="0.9"/>
+  <text x="336" y="371" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#22d3ee">90.96%</text>
+  <text x="116" y="371" font-family="Inter, sans-serif" font-size="8" fill="#5a8aaa" text-anchor="end">HyperDrive</text>
+
+  <!-- Bar 2 AutoML -->
+  <rect x="430" y="346" width="214" height="16" rx="3" fill="url(#bar3)" opacity="0.9"/>
+  <text x="650" y="359" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#10b981">91.70% ✓</text>
+  <text x="426" y="359" font-family="Inter, sans-serif" font-size="8" fill="#5a8aaa" text-anchor="end">AutoML</text>
+
+  <!-- Azure tag -->
+  <rect x="568" y="366" width="80" height="18" rx="9" fill="#0a1a2e" stroke="#0078d4" stroke-width="1"/>
+  <text x="608" y="379" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="#50e6ff" text-anchor="middle">Azure ML SDK</text>
+</svg>

@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#0c2340"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0891b2"/>
+      <stop offset="100%" style="stop-color:#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="warn" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="420" fill="url(#bg)"/>
+
+  <!-- Grid lines -->
+  <g opacity="0.05" stroke="#22d3ee" stroke-width="1">
+    <line x1="0" y1="60" x2="800" y2="60"/>
+    <line x1="0" y1="120" x2="800" y2="120"/>
+    <line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="240" x2="800" y2="240"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="100" y1="0" x2="100" y2="420"/>
+    <line x1="200" y1="0" x2="200" y2="420"/>
+    <line x1="300" y1="0" x2="300" y2="420"/>
+    <line x1="400" y1="0" x2="400" y2="420"/>
+    <line x1="500" y1="0" x2="500" y2="420"/>
+    <line x1="600" y1="0" x2="600" y2="420"/>
+    <line x1="700" y1="0" x2="700" y2="420"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="44" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#e2f4ff" text-anchor="middle" letter-spacing="1">DISASTER RESPONSE PIPELINE</text>
+  <line x1="160" y1="54" x2="640" y2="54" stroke="url(#accent)" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Step 1: Input Message -->
+  <rect x="40" y="100" width="160" height="220" rx="12" fill="#0d1829" stroke="#0891b2" stroke-width="1.5" opacity="0.9"/>
+  <rect x="40" y="100" width="160" height="4" rx="2" fill="url(#accent)"/>
+  <text x="120" y="130" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#22d3ee" text-anchor="middle" letter-spacing="0.5">INPUT</text>
+  <!-- Message bubbles -->
+  <rect x="58" y="145" width="124" height="32" rx="8" fill="#1a2a40" stroke="#22d3ee" stroke-width="1" opacity="0.7"/>
+  <text x="120" y="165" font-family="Inter, sans-serif" font-size="9.5" fill="#94d8e8" text-anchor="middle">"Need food and water!"</text>
+  <rect x="58" y="188" width="124" height="32" rx="8" fill="#1a2a40" stroke="#22d3ee" stroke-width="1" opacity="0.7"/>
+  <text x="120" y="208" font-family="Inter, sans-serif" font-size="9.5" fill="#94d8e8" text-anchor="middle">"Hospital destroyed"</text>
+  <rect x="58" y="231" width="124" height="32" rx="8" fill="#1a2a40" stroke="#22d3ee" stroke-width="1" opacity="0.7"/>
+  <text x="120" y="251" font-family="Inter, sans-serif" font-size="9.5" fill="#94d8e8" text-anchor="middle">"Missing people"</text>
+  <text x="120" y="300" font-family="Inter, sans-serif" font-size="9" fill="#5a8aaa" text-anchor="middle">26,000+ messages</text>
+
+  <!-- Arrow 1 -->
+  <line x1="205" y1="210" x2="255" y2="210" stroke="#22d3ee" stroke-width="2" opacity="0.8"/>
+  <polygon points="255,205 265,210 255,215" fill="#22d3ee" opacity="0.8"/>
+
+  <!-- Step 2: NLP Classifier -->
+  <rect x="270" y="100" width="260" height="220" rx="12" fill="#0d1829" stroke="#0891b2" stroke-width="1.5" opacity="0.9"/>
+  <rect x="270" y="100" width="260" height="4" rx="2" fill="url(#accent)"/>
+  <text x="400" y="130" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#22d3ee" text-anchor="middle" letter-spacing="0.5">NLP CLASSIFIER</text>
+
+  <!-- ETL box -->
+  <rect x="288" y="145" width="100" height="40" rx="6" fill="#1a2a40" stroke="#0891b2" stroke-width="1"/>
+  <text x="338" y="161" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#22d3ee" text-anchor="middle">ETL Pipeline</text>
+  <text x="338" y="175" font-family="Inter, sans-serif" font-size="8" fill="#5a8aaa" text-anchor="middle">Clean · Store</text>
+
+  <!-- ML box -->
+  <rect x="398" y="145" width="114" height="40" rx="6" fill="#1a2a40" stroke="#0891b2" stroke-width="1"/>
+  <text x="455" y="161" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#22d3ee" text-anchor="middle">ML Model</text>
+  <text x="455" y="175" font-family="Inter, sans-serif" font-size="8" fill="#5a8aaa" text-anchor="middle">Random Forest</text>
+
+  <!-- Arrow between ETL and ML -->
+  <line x1="388" y1="165" x2="396" y2="165" stroke="#22d3ee" stroke-width="1.5" opacity="0.6"/>
+  <polygon points="396,162 402,165 396,168" fill="#22d3ee" opacity="0.6"/>
+
+  <!-- Stats -->
+  <rect x="288" y="200" width="224" height="50" rx="6" fill="#111e30" stroke="#0891b2" stroke-width="0.8" opacity="0.8"/>
+  <text x="400" y="219" font-family="Inter, sans-serif" font-size="9" fill="#5a8aaa" text-anchor="middle">Classification Categories</text>
+  <text x="350" y="238" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#22d3ee" text-anchor="middle">36</text>
+  <text x="440" y="238" font-family="Inter, sans-serif" font-size="8.5" fill="#94d8e8" text-anchor="middle">related · medical</text>
+  <text x="440" y="250" font-family="Inter, sans-serif" font-size="8.5" fill="#94d8e8" text-anchor="middle">food · water · shelter</text>
+
+  <!-- Flask webapp indicator -->
+  <rect x="288" y="265" width="224" height="36" rx="6" fill="#0c2f1a" stroke="#10b981" stroke-width="1"/>
+  <text x="400" y="287" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#10b981" text-anchor="middle">⚡ Flask Web Application</text>
+
+  <!-- Arrow 2 -->
+  <line x1="535" y1="210" x2="585" y2="210" stroke="#22d3ee" stroke-width="2" opacity="0.8"/>
+  <polygon points="585,205 595,210 585,215" fill="#22d3ee" opacity="0.8"/>
+
+  <!-- Step 3: Output Categories -->
+  <rect x="600" y="100" width="160" height="220" rx="12" fill="#0d1829" stroke="#0891b2" stroke-width="1.5" opacity="0.9"/>
+  <rect x="600" y="100" width="160" height="4" rx="2" fill="url(#accent)"/>
+  <text x="680" y="130" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#22d3ee" text-anchor="middle" letter-spacing="0.5">ROUTING</text>
+
+  <!-- Category tags -->
+  <rect x="616" y="145" width="128" height="22" rx="4" fill="#1a3a20" stroke="#10b981" stroke-width="1"/>
+  <text x="680" y="160" font-family="Inter, sans-serif" font-size="9" fill="#10b981" text-anchor="middle">🏥 Medical Help</text>
+
+  <rect x="616" y="175" width="128" height="22" rx="4" fill="#1a2a3a" stroke="#0891b2" stroke-width="1"/>
+  <text x="680" y="190" font-family="Inter, sans-serif" font-size="9" fill="#22d3ee" text-anchor="middle">🍞 Food &amp; Water</text>
+
+  <rect x="616" y="205" width="128" height="22" rx="4" fill="#2a1a1a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="680" y="220" font-family="Inter, sans-serif" font-size="9" fill="#f59e0b" text-anchor="middle">🔥 Search &amp; Rescue</text>
+
+  <rect x="616" y="235" width="128" height="22" rx="4" fill="#1a2035" stroke="#818cf8" stroke-width="1"/>
+  <text x="680" y="250" font-family="Inter, sans-serif" font-size="9" fill="#818cf8" text-anchor="middle">🏠 Shelter</text>
+
+  <rect x="616" y="265" width="128" height="22" rx="4" fill="#1a2a3a" stroke="#0891b2" stroke-width="1" opacity="0.6"/>
+  <text x="680" y="280" font-family="Inter, sans-serif" font-size="9" fill="#5a8aaa" text-anchor="middle">+ 32 more categories</text>
+
+  <!-- Bottom labels -->
+  <text x="120" y="348" font-family="Inter, sans-serif" font-size="9" fill="#5a8aaa" text-anchor="middle">Real Disaster Data</text>
+  <text x="400" y="348" font-family="Inter, sans-serif" font-size="9" fill="#5a8aaa" text-anchor="middle">Python · Scikit-learn · SQLite · Flask</text>
+  <text x="680" y="348" font-family="Inter, sans-serif" font-size="9" fill="#5a8aaa" text-anchor="middle">Relief Agencies</text>
+
+  <!-- Tech badges -->
+  <rect x="258" y="366" width="52" height="20" rx="10" fill="#0d1829" stroke="#0891b2" stroke-width="1"/>
+  <text x="284" y="380" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="#22d3ee" text-anchor="middle">NLP</text>
+  <rect x="318" y="366" width="52" height="20" rx="10" fill="#0d1829" stroke="#0891b2" stroke-width="1"/>
+  <text x="344" y="380" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="#22d3ee" text-anchor="middle">Flask</text>
+  <rect x="378" y="366" width="52" height="20" rx="10" fill="#0d1829" stroke="#0891b2" stroke-width="1"/>
+  <text x="404" y="380" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="#22d3ee" text-anchor="middle">ETL</text>
+  <rect x="438" y="366" width="100" height="20" rx="10" fill="#0d1829" stroke="#0891b2" stroke-width="1"/>
+  <text x="488" y="380" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="#22d3ee" text-anchor="middle">Scikit-learn</text>
+</svg>
