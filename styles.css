@@ -212,6 +212,29 @@ img { display: block; max-width: 100%; }
 }
 
 
+/* Languages */
+.sidebar-languages {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.lang-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.lang-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    flex-shrink: 0;
+}
+
 /* CV download button */
 .cv-btn {
     display: flex;
