@@ -1,128 +1,143 @@
 /* ============================================================
-   Theme Toggle (Dark / Light Mode)
+   Theme Toggle
    ============================================================ */
 const html = document.documentElement;
 const themeToggle = document.getElementById('themeToggle');
+const themeToggleMobile = document.getElementById('themeToggleMobile');
 const themeIcon = document.getElementById('themeIcon');
+const themeIconMobile = document.getElementById('themeIconMobile');
+const themeLabel = document.getElementById('themeLabel');
 
-const savedTheme = localStorage.getItem('theme') || 'light';
-html.setAttribute('data-theme', savedTheme);
-themeIcon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-
-themeToggle.addEventListener('click', () => {
-    const current = html.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
-    themeIcon.className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-});
-
-/* ============================================================
-   Navbar — scroll glass effect + active link
-   ============================================================ */
-const navbar = document.getElementById('navbar');
-
-function updateNavbar() {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
-
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    let current = '';
-
-    sections.forEach(sec => {
-        if (window.scrollY >= sec.offsetTop - 100) current = sec.getAttribute('id');
-    });
-
-    navLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
-    });
+function applyTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    const isDark = theme === 'dark';
+    const iconClass = isDark ? 'fas fa-sun' : 'fas fa-moon';
+    themeIcon.className = iconClass;
+    themeIconMobile.className = iconClass;
+    if (themeLabel) themeLabel.textContent = isDark ? 'Light mode' : 'Dark mode';
 }
 
-window.addEventListener('scroll', updateNavbar, { passive: true });
-updateNavbar();
+applyTheme(localStorage.getItem('theme') || 'light');
+
+themeToggle.addEventListener('click', () => applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+themeToggleMobile.addEventListener('click', () => applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
 
 /* ============================================================
-   Mobile Menu
+   Mobile Sidebar
    ============================================================ */
+const sidebar = document.getElementById('sidebar');
 const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('navMenu');
+const sidebarOverlay = document.getElementById('sidebarOverlay');
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('open');
-    hamburger.classList.toggle('active');
-});
+function openSidebar() {
+    sidebar.classList.add('open');
+    sidebarOverlay.classList.add('active');
+    hamburger.classList.add('active');
+}
 
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        hamburger.classList.remove('active');
-    });
-});
+function closeSidebar() {
+    sidebar.classList.remove('open');
+    sidebarOverlay.classList.remove('active');
+    hamburger.classList.remove('active');
+}
 
-/* ============================================================
-   Scroll Progress Bar
-   ============================================================ */
-const scrollProgress = document.getElementById('scrollProgress');
-
-window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    scrollProgress.style.width = docHeight > 0 ? `${(scrollTop / docHeight) * 100}%` : '0%';
-}, { passive: true });
+hamburger.addEventListener('click', () => sidebar.classList.contains('open') ? closeSidebar() : openSidebar());
+sidebarOverlay.addEventListener('click', closeSidebar);
 
 /* ============================================================
    Typing Animation
    ============================================================ */
 const titles = ['AI/ML Engineer', 'Data Scientist', 'Researcher'];
-let titleIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
+let titleIndex = 0, charIndex = 0, isDeleting = false;
 const typedText = document.getElementById('typedText');
 
 function type() {
     const current = titles[titleIndex];
+    typedText.textContent = isDeleting
+        ? current.substring(0, charIndex - 1)
+        : current.substring(0, charIndex + 1);
+    isDeleting ? charIndex-- : charIndex++;
 
-    if (isDeleting) {
-        typedText.textContent = current.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        typedText.textContent = current.substring(0, charIndex + 1);
-        charIndex++;
-    }
-
-    let delay = isDeleting ? 60 : 100;
-
-    if (!isDeleting && charIndex === current.length) {
-        delay = 1800;
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        titleIndex = (titleIndex + 1) % titles.length;
-        delay = 400;
-    }
+    let delay = isDeleting ? 55 : 95;
+    if (!isDeleting && charIndex === current.length) { delay = 1800; isDeleting = true; }
+    else if (isDeleting && charIndex === 0) { isDeleting = false; titleIndex = (titleIndex + 1) % titles.length; delay = 350; }
 
     setTimeout(type, delay);
 }
-
 type();
 
 /* ============================================================
-   Scroll Reveal Animations
+   Scroll Progress Bar
+   ============================================================ */
+const scrollProgress = document.getElementById('scrollProgress');
+const mainContent = document.querySelector('.main-content');
+
+function updateScrollProgress() {
+    const el = mainContent || document.documentElement;
+    const scrollTop = mainContent ? mainContent.scrollTop : window.scrollY;
+    const scrollHeight = mainContent ? mainContent.scrollHeight - mainContent.clientHeight : document.documentElement.scrollHeight - window.innerHeight;
+    scrollProgress.style.width = scrollHeight > 0 ? `${(scrollTop / scrollHeight) * 100}%` : '0%';
+}
+
+if (mainContent) {
+    mainContent.addEventListener('scroll', updateScrollProgress, { passive: true });
+} else {
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+}
+
+/* ============================================================
+   Sidebar Active Nav — updates based on scroll position
+   ============================================================ */
+const snavItems = document.querySelectorAll('.snav-item');
+const sections = document.querySelectorAll('section[id]');
+
+function updateActiveNav() {
+    const scrollContainer = mainContent || window;
+    const scrollTop = mainContent ? mainContent.scrollTop : window.scrollY;
+    let current = '';
+
+    sections.forEach(sec => {
+        const top = sec.offsetTop - (mainContent ? mainContent.getBoundingClientRect().top : 0) - 120;
+        if (scrollTop >= top) current = sec.getAttribute('id');
+    });
+
+    snavItems.forEach(item => {
+        item.classList.toggle('active', item.dataset.section === current);
+    });
+}
+
+if (mainContent) {
+    mainContent.addEventListener('scroll', updateActiveNav, { passive: true });
+} else {
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+}
+
+/* Sidebar nav click — smooth scroll + close on mobile */
+snavItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.getElementById(item.dataset.section);
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            closeSidebar();
+        }
+    });
+});
+
+/* ============================================================
+   Reveal on Scroll
    ============================================================ */
 const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
+    entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // Stagger children in the same parent grid
-            const siblings = entry.target.parentElement.querySelectorAll('.reveal');
-            let delay = 0;
-            siblings.forEach((el, idx) => {
-                if (el === entry.target) delay = idx * 80;
-            });
-            setTimeout(() => entry.target.classList.add('visible'), Math.min(delay, 400));
+            const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal'));
+            const idx = siblings.indexOf(entry.target);
+            setTimeout(() => entry.target.classList.add('visible'), Math.min(idx * 70, 350));
             revealObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+}, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
@@ -131,64 +146,51 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
    ============================================================ */
 function animateCounter(el) {
     const target = parseInt(el.dataset.target, 10);
-    const duration = 1400;
-    const step = target / (duration / 16);
+    const step = target / (1200 / 16);
     let current = 0;
-
     const timer = setInterval(() => {
         current += step;
-        if (current >= target) {
-            el.textContent = target;
-            clearInterval(timer);
-        } else {
-            el.textContent = Math.floor(current);
-        }
+        if (current >= target) { el.textContent = target; clearInterval(timer); }
+        else el.textContent = Math.floor(current);
     }, 16);
 }
 
 const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounter(entry.target);
-            counterObserver.unobserve(entry.target);
-        }
+        if (entry.isIntersecting) { animateCounter(entry.target); counterObserver.unobserve(entry.target); }
     });
 }, { threshold: 0.5 });
 
-document.querySelectorAll('.stat-number').forEach(el => counterObserver.observe(el));
+document.querySelectorAll('.sidebar-stat-num').forEach(el => counterObserver.observe(el));
 
 /* ============================================================
-   Project Filter Tabs
+   Project Filter
    ============================================================ */
-const filterBtns = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
-
-filterBtns.forEach(btn => {
+document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
         const filter = btn.dataset.filter;
-
-        projectCards.forEach(card => {
-            const category = card.dataset.category;
-            const show = filter === 'all' || category === filter;
-            card.classList.toggle('hidden', !show);
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.classList.toggle('hidden', filter !== 'all' && card.dataset.category !== filter);
         });
     });
 });
 
 /* ============================================================
-   Back to Top Button
+   Back to Top
    ============================================================ */
 const backToTop = document.getElementById('backToTop');
+const scrollSource = mainContent || window;
 
-window.addEventListener('scroll', () => {
-    backToTop.classList.toggle('visible', window.scrollY > 500);
+scrollSource.addEventListener('scroll', () => {
+    const scrollTop = mainContent ? mainContent.scrollTop : window.scrollY;
+    backToTop.classList.toggle('visible', scrollTop > 400);
 }, { passive: true });
 
 backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (mainContent) mainContent.scrollTo({ top: 0, behavior: 'smooth' });
+    else window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 /* ============================================================
@@ -200,34 +202,13 @@ const formSuccess = document.getElementById('formSuccess');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const message = document.getElementById('message').value.trim();
-
         if (!name || !email || !message) return;
-
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            document.getElementById('email').focus();
-            return;
-        }
-
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
         formSuccess.classList.add('show');
         contactForm.reset();
         setTimeout(() => formSuccess.classList.remove('show'), 5000);
     });
 }
-
-/* ============================================================
-   Smooth Scroll for Anchor Links
-   ============================================================ */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href !== '#' && document.querySelector(href)) {
-            e.preventDefault();
-            document.querySelector(href).scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    });
-});
