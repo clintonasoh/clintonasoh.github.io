@@ -66,6 +66,10 @@
             </div>
 
 
+            <a href="cv.pdf" download class="cv-btn">
+                <i class="fas fa-download"></i> Download CV
+            </a>
+
             <nav class="sidebar-nav" id="sidebarNav">
                 <a href="#about"          class="snav-item" data-section="about"><span class="snav-dot"></span><span class="snav-label">About</span></a>
                 <a href="#projects"       class="snav-item" data-section="projects"><span class="snav-dot"></span><span class="snav-label">Projects</span></a>
@@ -498,11 +502,15 @@
                         </div>
                     </div>
                     <form class="contact-form reveal" id="contactForm">
-                        <div class="form-group"><label for="name">Name</label><input type="text" id="name" placeholder="John Doe" required></div>
-                        <div class="form-group"><label for="email">Email</label><input type="email" id="email" placeholder="john@example.com" required></div>
-                        <div class="form-group"><label for="message">Message</label><textarea id="message" placeholder="What would you like to discuss?" rows="5" required></textarea></div>
+                        <input type="hidden" name="access_key" value="aa6af102-da1d-4c4b-b506-e245d5e6ddfd">
+                        <input type="hidden" name="subject" value="New message from portfolio">
+                        <input type="checkbox" name="botcheck" style="display:none">
+                        <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" placeholder="John Doe" required></div>
+                        <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="john@example.com" required></div>
+                        <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" placeholder="What would you like to discuss?" rows="5" required></textarea></div>
                         <button type="submit" class="btn btn-primary btn-full"><i class="fas fa-paper-plane"></i> Send Message</button>
                         <div class="form-success" id="formSuccess"><i class="fas fa-check-circle"></i> Message sent! I'll get back to you soon.</div>
+                        <div class="form-error" id="formError"><i class="fas fa-exclamation-circle"></i> Something went wrong. Please try again.</div>
                     </form>
                 </div>
             </section>

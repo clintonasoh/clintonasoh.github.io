@@ -194,21 +194,48 @@ backToTop.addEventListener('click', () => {
 });
 
 /* ============================================================
-   Contact Form
+   Contact Form — Web3Forms
    ============================================================ */
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
+const formError   = document.getElementById('formError');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
-        if (!name || !email || !message) return;
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
-        formSuccess.classList.add('show');
-        contactForm.reset();
-        setTimeout(() => formSuccess.classList.remove('show'), 5000);
+
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const original  = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+
+        formSuccess.classList.remove('show');
+        formError.classList.remove('show');
+
+        const data = Object.fromEntries(new FormData(contactForm));
+
+        try {
+            const res  = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            const json = await res.json();
+
+            if (json.success) {
+                formSuccess.classList.add('show');
+                contactForm.reset();
+                setTimeout(() => formSuccess.classList.remove('show'), 6000);
+            } else {
+                formError.classList.add('show');
+                setTimeout(() => formError.classList.remove('show'), 6000);
+            }
+        } catch {
+            formError.classList.add('show');
+            setTimeout(() => formError.classList.remove('show'), 6000);
+        } finally {
+            submitBtn.innerHTML = original;
+            submitBtn.disabled  = false;
+        }
     });
 }

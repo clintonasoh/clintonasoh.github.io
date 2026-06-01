@@ -212,6 +212,28 @@ img { display: block; max-width: 100%; }
 }
 
 
+/* CV download button */
+.cv-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: inherit;
+    transition: var(--transition);
+    box-shadow: 0 4px 14px rgba(var(--accent-rgb), 0.35);
+}
+
+.cv-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(var(--accent-rgb), 0.45);
+}
+
 /* Sidebar nav */
 .sidebar-nav {
     display: flex;
@@ -1072,19 +1094,22 @@ img { display: block; max-width: 100%; }
 
 .btn-full { width: 100%; justify-content: center; }
 
-.form-success {
+.form-success,
+.form-error {
     display: none;
     align-items: center;
     gap: 7px;
     padding: 9px 12px;
-    background: rgba(16,185,129,0.1);
-    color: #10b981;
     border-radius: var(--radius-sm);
     font-size: 0.87rem;
     font-weight: 500;
 }
 
-.form-success.show { display: flex; }
+.form-success { background: rgba(16,185,129,0.1); color: #10b981; }
+.form-error   { background: rgba(239,68,68,0.1);  color: #ef4444; }
+
+.form-success.show,
+.form-error.show { display: flex; }
 
 /* ============================================================
    Footer
