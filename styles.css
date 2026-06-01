@@ -211,28 +211,6 @@ img { display: block; max-width: 100%; }
     margin-top: 1px;
 }
 
-.sidebar-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-}
-
-.sidebar-skills span {
-    padding: 3px 9px;
-    background: var(--surface-2);
-    color: var(--text-muted);
-    border-radius: 999px;
-    font-size: 0.72rem;
-    font-weight: 500;
-    border: 1px solid var(--border-subtle);
-    transition: var(--transition);
-    cursor: default;
-}
-
-.sidebar-skills span:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-}
 
 /* Sidebar nav */
 .sidebar-nav {
