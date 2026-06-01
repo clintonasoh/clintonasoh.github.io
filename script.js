@@ -73,7 +73,7 @@ window.addEventListener('scroll', () => {
 /* ============================================================
    Typing Animation
    ============================================================ */
-const titles = ['Data Scientist', 'ML Engineer', 'AI Researcher', 'PhD Researcher'];
+const titles = ['AI/ML Engineer', 'Data Scientist', 'Researcher'];
 let titleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;

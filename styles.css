@@ -1266,6 +1266,113 @@ section { padding: 100px 0; }
 .form-success.show { display: flex; }
 
 /* ============================================================
+   Publications Section
+   ============================================================ */
+.publications { background: var(--surface); }
+
+.publications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.pub-card {
+    background: var(--bg);
+    border-radius: var(--radius);
+    padding: 1.8rem 2rem;
+    border: 1px solid var(--border);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.pub-card:hover {
+    box-shadow: var(--shadow);
+    border-color: rgba(var(--accent-rgb), 0.3);
+    transform: translateY(-4px);
+}
+
+.pub-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.pub-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.pub-badge--ieee {
+    background: rgba(0, 100, 200, 0.12);
+    color: #0064c8;
+}
+
+[data-theme="dark"] .pub-badge--ieee {
+    background: rgba(100, 160, 255, 0.15);
+    color: #64a0ff;
+}
+
+.pub-badge--springer {
+    background: rgba(210, 50, 50, 0.1);
+    color: #c0392b;
+}
+
+[data-theme="dark"] .pub-badge--springer {
+    background: rgba(255, 120, 100, 0.15);
+    color: #ff7864;
+}
+
+.pub-year {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.pub-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+.pub-venue {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.pub-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--accent);
+    padding: 7px 16px;
+    border: 1.5px solid rgba(var(--accent-rgb), 0.35);
+    border-radius: var(--radius-sm);
+    align-self: flex-start;
+    transition: var(--transition);
+    margin-top: 4px;
+}
+
+.pub-link:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+
+/* ============================================================
    Footer
    ============================================================ */
 .footer {
