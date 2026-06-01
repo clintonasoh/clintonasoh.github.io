@@ -435,7 +435,6 @@ img { display: block; max-width: 100%; }
     color: var(--text-muted);
     line-height: 1.85;
     margin-bottom: 1.2rem;
-    max-width: 680px;
 }
 
 /* ============================================================
@@ -444,7 +443,6 @@ img { display: block; max-width: 100%; }
 .timeline {
     position: relative;
     padding-left: 32px;
-    max-width: 740px;
 }
 
 .timeline::before {
@@ -861,7 +859,6 @@ img { display: block; max-width: 100%; }
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
-    max-width: 740px;
 }
 
 .pub-card {
@@ -984,7 +981,6 @@ img { display: block; max-width: 100%; }
     grid-template-columns: 1fr 1.3fr;
     gap: 3rem;
     align-items: start;
-    max-width: 820px;
 }
 
 .contact-text {
